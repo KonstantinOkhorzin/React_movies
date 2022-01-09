@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 
 import Movies from '../components/Movies';
+import Preloader from '../components/Preloader';
 
 function Main() {
 
@@ -17,7 +18,7 @@ function Main() {
            {
                movies.length ? 
                (<Movies movies={movies}/>) :
-               <h3>Loading...</h3>
+               <Preloader/>
            }
         </main>
     );
