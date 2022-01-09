@@ -14,8 +14,8 @@ function Main() {
         .then(data => setMovies(data.Search))
     }, []);
 
-    const searchMovies = (str) => {
-        fetch(`http://www.omdbapi.com/?apikey=78584b3c&s=${str}`)
+    const searchMovies = (str, type) => {
+        fetch(`http://www.omdbapi.com/?apikey=78584b3c&s=${str}${type !== 'all' ? `&type=${type}` : ''}`)
         .then(response => response.json())
         .then(data => setMovies(data.Search))
     }
